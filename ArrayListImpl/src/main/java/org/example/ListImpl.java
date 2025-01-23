@@ -19,6 +19,7 @@ public class ListImpl<T> implements List<T> {
         arr = arr1;
     }
 
+    
     void print() {
         if (size == 0) {
             System.out.println("List is empty");
