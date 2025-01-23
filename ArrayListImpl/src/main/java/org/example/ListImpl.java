@@ -19,7 +19,6 @@ public class ListImpl<T> implements List<T> {
         arr = arr1;
     }
 
-    
     void print() {
         if (size == 0) {
             System.out.println("List is empty");
@@ -472,6 +471,18 @@ public class ListImpl<T> implements List<T> {
         }
     }
 
+    @Override
+    public void sort(Comparator<? super T> c) {
+        T[] ar = (T[]) new Object[size];
+        System.arraycopy(arr, 0, ar, 0, size);
+        if (c == null) {
+            Arrays.sort(ar);
+        } else {
+            Arrays.sort(ar, c);
+        }
+        System.arraycopy(ar, 0, arr, 0, size);
+    }
+
     public static void main(String[] args) {
         ListImpl<String> list = new ListImpl<>();
 
@@ -481,6 +492,11 @@ public class ListImpl<T> implements List<T> {
         list.add("Ravi");
         list.add("Prashanth");
         list.add("Uday");
+        list.print();
+
+        list.sort(null);
+        list.print();
+        list.sort(Comparator.reverseOrder());
         list.print();
 
         System.out.println("----Added elements by index");

@@ -469,4 +469,27 @@ class ListImplTest {
         assertEquals(4, list.get(1));
         assertEquals(6, list.get(2));
     }
+
+    @Test
+    void sort(){
+        ListImpl<Integer> list = new ListImpl<>();
+        list.add(3);
+        list.add(2);
+        list.add(1);
+
+        ListImpl<Integer> list2 = new ListImpl<>();
+        list2.add(1);
+        list2.add(2);
+        list2.add(3);
+
+        list.sort(null);
+        assertTrue(list.equals(list2));
+
+        list.sort(Comparator.reverseOrder());
+        list2.clear();
+        list2.add(3);
+        list2.add(2);
+        list2.add(1);
+        assertTrue(list.equals(list2));
+    }
 }
