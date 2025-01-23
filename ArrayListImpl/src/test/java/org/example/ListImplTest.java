@@ -471,7 +471,7 @@ class ListImplTest {
     }
 
     @Test
-    void sort(){
+    void sort() {
         ListImpl<Integer> list = new ListImpl<>();
         list.add(3);
         list.add(2);
