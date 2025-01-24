@@ -45,7 +45,7 @@ public class ListImpl<T> implements List<T> {
     @Override
     public boolean contains(Object o) {
         for (int i = 0; i < size; i++) {
-            if (arr[i] == o) {
+            if (arr[i].hashCode() == o.hashCode()) {
                 return true;
             }
         }
