@@ -2,7 +2,7 @@ package org.example;
 
 import java.util.*;
 
-public class ListImplTestWithMethodCalls extends ListImpl {
+public class ListImplTestWithMethodCalls {
     public static void main(String args[]) {
         ListImpl<String> list = new ListImpl<>();
 
